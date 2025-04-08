@@ -1,27 +1,18 @@
 "use client";
 
-import { Draggable } from "@hello-pangea/dnd";
 
 interface Props {
   id: string;
   index: number;
+  className : string
 }
 
-export function TradingStats({ id, index }: Props) {
+export default function TradingStats({ id, index ,className}: Props) {
   return (
-    <Draggable draggableId={id} index={index}>
-      {(provided) => (
-        <div
-          ref={provided.innerRef}
-          {...provided.draggableProps}
-          {...provided.dragHandleProps}
-          className="col-span-3 border border-gray-600 rounded p-2 min-h-[100px] min-w-[100px]"
-        >
-          <div className="h-full min-h-[40px]">
-            <span className="text-white text-sm">Trading Stats</span>
-          </div>
-        </div>
-      )}
-    </Draggable>
+    <div className={`col-span-3 border border-gray-600 rounded p-2 ${className} dnd-handle`}>
+    <div className="h-full min-h-[40px]">
+      <span className="text-white text-sm">Trading</span>
+    </div>
+  </div>
   );
 }

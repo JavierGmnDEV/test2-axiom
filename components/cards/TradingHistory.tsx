@@ -5,23 +5,15 @@ import { Draggable } from "@hello-pangea/dnd";
 interface Props {
   id: string;
   index: number;
+  className : string
 }
 
-export function TradingHistory({ id, index }: Props) {
+export default function TradingHistory({ id, index,className }: Props) {
   return (
-    <Draggable draggableId={id} index={index}>
-      {(provided) => (
-        <div
-          ref={provided.innerRef}
-          {...provided.draggableProps}
-          {...provided.dragHandleProps}
-          className="col-span-12 border border-gray-600 rounded p-2 min-h-[80px] min-w-[60vw]"
-        >
-          <div className="h-full min-h-[40px]">
-            <span className="text-white text-sm">Trading History</span>
-          </div>
-        </div>
-      )}
-    </Draggable>
+    <div className={`col-span-3 border border-gray-600 rounded p-2 ${className} dnd-handle`}>
+    <div className="h-full min-h-[40px]">
+      <span className="text-white text-sm">Trading</span>
+    </div>
+  </div>
   );
 }

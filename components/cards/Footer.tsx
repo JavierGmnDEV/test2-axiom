@@ -5,23 +5,15 @@ import { Draggable } from "@hello-pangea/dnd";
 interface Props {
   id: string;
   index: number;
+  className : string
 }
 
-export function Footer({ id, index }: Props) {
+export default function Footer({ id, index ,className}: Props) {
   return (
-    <Draggable draggableId={id} index={index}>
-      {(provided) => (
-        <div
-          ref={provided.innerRef}
-          {...provided.draggableProps}
-          {...provided.dragHandleProps}
-          className="col-span-12 border border-gray-600 rounded p-2 min-h-[20px] min-w-[80vw]"
-        >
-          <div className="h-full min-h-[40px]">
-            <span className="text-white text-sm">Footer</span>
-          </div>
-        </div>
-      )}
-    </Draggable>
+    <div className={`col-span-3 border border-gray-600 rounded p-2 ${className}dnd-handle`}>
+    <div className="h-full min-h-[40px]">
+      <span className="text-white text-sm">Footer</span>
+    </div>
+  </div>
   );
 }

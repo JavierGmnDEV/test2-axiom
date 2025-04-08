@@ -32,3 +32,16 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* En tu archivo global.css */
+[role="button"] {
+  touch-action: none; /* Previene scroll accidental en móviles */
+}
+
+.dnd-handle {
+  cursor: grab;
+}
+
+.dnd-handle:active {
+  cursor: grabbing;
+}
